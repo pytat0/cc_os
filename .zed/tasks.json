@@ -1,0 +1,14 @@
+[
+    {
+        "label": "Build cc",
+        "command": "cargo build"
+    },
+    {
+        "label": "Create boot image",
+        "command": "cargo bootimage"
+    },
+    {
+        "label": "Run image",
+        "command": "qemu-system-x86_64 -drive format=raw,file=target/x86_64-cc_os/debug/bootimage-cc_os.bin"
+    }
+]
