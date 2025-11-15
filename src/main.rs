@@ -16,9 +16,7 @@ fn trivial_assertion() {
 pub extern "C" fn _start() -> ! {
     println!("Hello World{}", "!");
 
-    cc_os::init_idt();
-
-    x86_64::instructions::interrupts::int3();
+    cc_os::init();
 
     #[cfg(test)]
     test_main();
