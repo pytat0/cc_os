@@ -1,14 +1,18 @@
 [
     {
         "label": "Build cc",
-        "command": "cargo build"
+        "command": "mise build",
     },
     {
         "label": "Create boot image",
-        "command": "cargo bootimage"
+        "command": "mise create",
     },
     {
         "label": "Run image",
-        "command": "qemu-system-x86_64 -drive format=raw,file=target/x86_64-cc_os/debug/bootimage-cc_os.bin"
-    }
+        "command": "mise image",
+    },
+    {
+        "label": "Build, create image and run",
+        "command": "mise all",
+    },
 ]
