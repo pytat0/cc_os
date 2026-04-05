@@ -1,0 +1,19 @@
+[tasks.build]
+description = "Build cc"
+run = "cargo build"
+
+[tasks.create]
+description = "Create boot image"
+run = "cargo bootimage"
+
+[tasks.image]
+description = "Run image"
+run = "qemu-system-x86_64 -drive format=raw,file=target/x86_64-cc_os/debug/bootimage-cc_os.bin"
+
+[tasks.all]
+description = "build, create image and run"
+run = [
+	{task = "build"},
+	{task = "create"},
+	{task = "image"}
+]
